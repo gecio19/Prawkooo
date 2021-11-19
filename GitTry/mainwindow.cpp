@@ -30,7 +30,7 @@ QString tablicka[4] = {"Podróżujący z czworonogamimuszą we Włoszech należy
 
                        , "W Austrii kierowcy mogą dostać mandat nawet bez pomiaru prędkości.<p> Pracownicy austriackiej drogówki szkoleni są w kontroli prędkości „na oko”. "
 
-                       , "Niemcy to bardzo liberalny kraj <p> jeśli chodzi o dobór ubioru do prowadzenia samochodu. <p> Podróż bez butów nie jest wykroczeniem, przy czym zaleca się , żeby kierowcy zakładali wygodne obuwie. <p> Jeśli kierowca prowadzący samochód na bosaka będzie brał udział w wypadku, <p> może utracić prawo do ubezpieczenia."};
+                       , "Niemcy alla to bardzo liberalny kraj <p> jeśli chodzi o dobór ubioru do prowadzenia samochodu. <p> Podróż bez butów nie jest wykroczeniem, przy czym zaleca się , żeby kierowcy zakładali wygodne obuwie. <p> Jeśli kierowca prowadzący samochód na bosaka będzie brał udział w wypadku, <p> może utracić prawo do ubezpieczenia."};
 
 
 
