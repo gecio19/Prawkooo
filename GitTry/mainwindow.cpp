@@ -5,9 +5,29 @@
 #include <QMediaPlayer>
 #include <QVideoWidget>
 #include <QDebug>
-
+#include <QFile>
 
 using namespace std;
+
+QFile file("E:/PrawoJazdy/Prawo_Jazdy/Ciekawostki.txt");
+QString line[100];
+int line_count = 0;
+QString generator;
+int Wylosowanalinia;
+int licz = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int wynik;
 int skrzyzowania;
@@ -24,13 +44,6 @@ int odpowiedzB;
 int poprawnaOdowiedz;
 int pulapunktow;
 int Postep = 1;
-
-QString tablicka[4] = {"Podróżujący z czworonogamimuszą we Włoszech należy pamiętać o zapinaniu <p> pasów bezpieczeństwa swoim psom.<p>W Niemczech psy uważane są za ładunek przewozowy – nie ma nakazu zapinania pasów,<p> ale muszą być one chronione przed upadkiem np. w razie gwałtownego hamowania."
-                       ," W stanie Minnesota w USA, goryle mogą podróżować w samochodzie <p> ale tylko na siedzeniu pasażera. <p>Kierowcy, którzy przewożą te zwierzęta na tylnym siedzeniu, muszą liczyć się z grzywną."
-
-                       , "W Austrii kierowcy mogą dostać mandat nawet bez pomiaru prędkości.<p> Pracownicy austriackiej drogówki szkoleni są w kontroli prędkości „na oko”. "
-
-                       , "Niemcy alla to bardzo liberalny kraj <p> jeśli chodzi o dobór ubioru do prowadzenia samochodu. <p> Podróż bez butów nie jest wykroczeniem, przy czym zaleca się , żeby kierowcy zakładali wygodne obuwie. <p> Jeśli kierowca prowadzący samochód na bosaka będzie brał udział w wypadku, <p> może utracić prawo do ubezpieczenia."};
 
 
 
@@ -129,6 +142,77 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
+
+void Policzilelini()
+{
+    line_count = 0;
+    file.open(QIODevice::ReadOnly);
+
+    QTextStream in(&file);
+
+    while(!in.atEnd())
+    {
+       line[line_count] = in.readLine();
+       line_count++;
+    }
+
+    Wylosowanalinia = rand() %  line_count;
+    file.close();
+
+}
+
+
+
+void odczyt()
+{
+
+
+    licz = 0;
+
+    if (file.open(QIODevice::ReadOnly))
+    {
+       QTextStream in(&file);
+       while (!in.atEnd())
+       {
+
+
+          QString line = in.readLine();
+
+          if(licz == Wylosowanalinia)
+          {
+              generator = line;
+
+
+          }
+
+          licz = licz +1;
+
+
+
+       }
+       file.close();
+
+        }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void MainWindow::myfunction()
 {
@@ -587,8 +671,6 @@ void MainWindow::on_menu_dodatki_clicked()
 void MainWindow::on_Ciekawostki_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
-    loswanie = rand() % 4;
-    ui->label_25->setText(tablicka[loswanie]);
 
 }
 
@@ -602,8 +684,16 @@ void MainWindow::on_Pomoc_clicked()
 
 void MainWindow::on_pushButton_31_clicked()
 {
-    loswanie = rand() % 4;
-    ui->label_25->setText(tablicka[loswanie]);
+    Policzilelini();
+    odczyt();
+    ui->label_25->setText(generator);
+
+
+
+
+
+
+
 
 }
 
