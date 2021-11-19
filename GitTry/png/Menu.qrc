@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/Menu">
+        <file>dodatki.png</file>
+        <file>egzamin.png</file>
+        <file>Nauka.png</file>
+        <file>skrzyzowania.png</file>
+        <file>zakoncz.png</file>
+        <file>zrodla.png</file>
+    </qresource>
+    <qresource prefix="/Nauka">
+        <file>Nauka/01.jpg</file>
+        <file>Nauka/02.jpg</file>
+        <file>Nauka/03.jpg</file>
+        <file>Nauka/lewo.jpg</file>
+        <file>Nauka/sygnalizacja.png</file>
+    </qresource>
+    <qresource prefix="/Skrzyzowania">
+        <file>skrzyzowania/skrzyzowanie1.png</file>
+    </qresource>
+    <qresource prefix="/Dodatki">
+        <file>Dodatki/Ciekawostki.jpg</file>
+        <file>Dodatki/Pomoc.jpg</file>
+        <file>Dodatki/istockphoto-163923050-1024x1024.jpg</file>
+        <file>Dodatki/Pierwsza_Pomoc.jpg</file>
+    </qresource>
+    <qresource prefix="/Filmy">
+        <file>Dodatki/pomoc/boczna.mpg</file>
+        <file>Dodatki/pomoc/Pomoc.mpg</file>
+    </qresource>
+</RCC>

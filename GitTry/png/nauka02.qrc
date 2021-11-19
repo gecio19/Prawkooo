@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/nauka02">
+        <file>Nauka/2/00.jpg</file>
+        <file>Nauka/2/01.jpg</file>
+    </qresource>
+</RCC>
