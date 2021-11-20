@@ -17,7 +17,80 @@ int Wylosowanalinia;
 int licz = 0;
 
 
+/// Tu zaczyna się tablica macierzy i potrzebne rzeczy
 
+
+int macierz[3][3];
+
+int poprawnaSK = 0;
+
+
+
+
+
+
+
+
+
+
+void clear_y(int wiersz)
+{
+
+    for(int i = 0 ; i <=3 ; i++)
+    {
+
+                macierz[wiersz][i] = 0;
+
+
+    }
+  }
+
+
+void clear_x(int kolumna)
+{
+/// kolumna  = 0
+    for(int i = 0 ; i <=3 ; i++)
+    {
+
+                macierz[i][kolumna] = 0;
+    }
+  }
+
+
+
+
+
+
+void czydobrze()
+{
+    poprawnaSK = 0;
+if(macierz[0][2] == 1 & macierz[1][1] == 1 & macierz[2][0] == 1)
+    {
+
+        poprawnaSK =1 ;
+
+    }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Koniec
 
 
 
@@ -31,7 +104,6 @@ int licz = 0;
 
 int wynik;
 int skrzyzowania;
-int A1,A2,A3,B1,B2,B3,C1,C2,C3 = 0;
 int loswanie;
 int czas;
 int poprawna;
@@ -490,11 +562,12 @@ void MainWindow::on_skrzyzowania_A1_clicked()
     ui->Skrzyzowania_A3->setStyleSheet({"background: white "});
     ui->Skrzyzowania_B1->setStyleSheet({"background: white "});
     ui->Skrzyzowania_C1->setStyleSheet({"background: white "});
-    A1 = 1;
-    A2 = 0;
-    A3 = 0;
-    B1 = 0;
-    C1 = 0;
+    clear_y(0);
+    clear_x(0);
+    macierz[0][0] = 1;
+
+
+
 
 }
 
@@ -506,11 +579,10 @@ void MainWindow::on_Skrzyzowania_A2_clicked()
     ui->Skrzyzowania_A3->setStyleSheet({"background: white "});
     ui->Skrzyzowania_B2->setStyleSheet({"background: white "});
     ui->Skrzyzowania_C2->setStyleSheet({"background: white "});
-    A2 = 1;
-    A1 = 0;
-    A3 = 0;
-    B2 = 0;
-    C2 = 0;
+    clear_y(1);
+    clear_x(0);
+    macierz[1][0] = 1;
+
 
 
 }
@@ -523,11 +595,10 @@ void MainWindow::on_Skrzyzowania_A3_clicked()
     ui->Skrzyzowania_A3->setStyleSheet({"background: green "});
     ui->Skrzyzowania_B3->setStyleSheet({"background: white "});
     ui->Skrzyzowania_C3->setStyleSheet({"background: white "});
-    A3 = 1;
-    A2 = 0;
-    A1 = 0;
-    B3 = 0;
-    C3 = 0;
+    clear_y(2);
+    clear_x(0);
+    macierz[2][0] = 1;
+
 
 }
 
@@ -539,11 +610,10 @@ void MainWindow::on_Skrzyzowania_B1_clicked()
     ui->Skrzyzowania_B3->setStyleSheet({"background: white "});
     ui->skrzyzowania_A1->setStyleSheet({"background: white "});
     ui->Skrzyzowania_C1->setStyleSheet({"background: white "});
-    B1 = 1;
-    B2 = 0;
-    B3 = 0 ;
-    A1 = 0;
-    C1 = 0;
+    clear_y(0);
+    clear_x(0);
+    macierz[0][1] = 1;
+
 
 }
 
@@ -555,11 +625,11 @@ void MainWindow::on_Skrzyzowania_B2_clicked()
     ui->Skrzyzowania_B3->setStyleSheet({"background: white "});
     ui->Skrzyzowania_A2->setStyleSheet({"background: white "});
     ui->Skrzyzowania_C2->setStyleSheet({"background: white "});
-    B2 = 1;
-    C2 = 0;
-    A2 = 0;
-    B1 = 0;
-    B3 = 0;
+
+    clear_y(1);
+    clear_x(1);
+    macierz[1][1] = 1;
+
 
 }
 
@@ -571,11 +641,10 @@ void MainWindow::on_Skrzyzowania_B3_clicked()
     ui->Skrzyzowania_B3->setStyleSheet({"background: green "});
     ui->Skrzyzowania_A3->setStyleSheet({"background: white "});
     ui->Skrzyzowania_C3->setStyleSheet({"background: white "});
-    B3 = 1;
-    B2 =0;
-    B1 = 0;
-    A3 = 0;
-    C3 = 0;
+    clear_y(2);
+    clear_x(1);
+    macierz[2][1] = 1;
+
 
 }
 
@@ -587,11 +656,11 @@ void MainWindow::on_Skrzyzowania_C1_clicked()
     ui->Skrzyzowania_C3->setStyleSheet({"background: white "});
     ui->skrzyzowania_A1->setStyleSheet({"background: white "});
     ui->Skrzyzowania_B1->setStyleSheet({"background: white "});
-    C1 = 1;
-    C2 =0;
-    C3 = 0;
-    B1 = 0;
-    A1 = 0;
+
+    clear_y(0);
+    clear_x(2);
+    macierz[0][2] = 1;
+
 
 }
 
@@ -603,11 +672,10 @@ void MainWindow::on_Skrzyzowania_C2_clicked()
     ui->Skrzyzowania_C3->setStyleSheet({"background: white "});
     ui->Skrzyzowania_A2->setStyleSheet({"background: white "});
     ui->Skrzyzowania_B2->setStyleSheet({"background: white "});
-    C2 = 1;
-    C1= 0;
-    C3 =0;
-    B2 = 0;
-    A2 = 0;
+    clear_y(1);
+    clear_x(2);
+    macierz[1][2] = 1;
+
 
 }
 
@@ -619,11 +687,11 @@ void MainWindow::on_Skrzyzowania_C3_clicked()
     ui->Skrzyzowania_C3->setStyleSheet({"background: green "});
     ui->Skrzyzowania_B3->setStyleSheet({"background: white "});
     ui->Skrzyzowania_A3->setStyleSheet({"background: white "});
-    C3 = 1;
-    C2 = 0;
-    C1 = 0;
-    B3 = 0;
-    A3 = 0;
+    clear_y(2);
+    clear_x(2);
+    macierz[2][2] = 1;
+
+
 
 
 }
@@ -633,8 +701,14 @@ void MainWindow::on_Skrzyzowania_C3_clicked()
 
 void MainWindow::on_pushButton_29_clicked()
 {
+
+
+    czydobrze();
 ui->sprawdzone_6->setVisible(true);
-    if(A3 == 1 && B2 == 1 && C1 ==1 )
+
+
+
+    if(poprawnaSK==1)
     {
         ui->sprawdzone_6->setStyleSheet({"background: green "});
         ui->sprawdzone_6->setText("Odpowiedź prawidłowa");
